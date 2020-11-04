@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Fach1"
+        android:title="Math"/>
+    <item
+        android:id="@+id/Fach2"
+        android:title="Phy"/>
+    <item
+        android:id="@+id/Fach3"
+        android:title="Chemie"/>
+    <item
+        android:id="@+id/Fach4"
+        android:title="Elektro_Techn"/>
+
+</menu>
