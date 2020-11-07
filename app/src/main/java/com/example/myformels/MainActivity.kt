@@ -3,7 +3,10 @@ package com.example.myformels
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.ToolbarWidgetWrapper
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         toggle = ActionBarDrawerToggle(this, firstView, R.string.open, R.string.close)
         firstView.addDrawerListener(toggle)
         toggle.syncState()
