@@ -7,13 +7,20 @@
     android:layout_height="match_parent"
     android:id="@+id/firstView"
     tools:context=".MainActivity">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-  <!--  <include
+    <include
         android:id="@+id/search_bar"
         layout="@layout/search_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        /> -->
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_gravity="end"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -57,6 +64,11 @@
             app:layout_constraintTop_toBottomOf="@id/fach3"
             android:text="Fach4"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -68,8 +80,6 @@
 
 
     </com.google.android.material.navigation.NavigationView>
-
-
 </androidx.drawerlayout.widget.DrawerLayout>
         
 
