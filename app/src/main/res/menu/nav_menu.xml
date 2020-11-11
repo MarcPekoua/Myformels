@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/Fach1"
-        android:title="Math"/>
-    <item
-        android:id="@+id/Fach2"
-        android:title="Phy"/>
-    <item
-        android:id="@+id/Fach3"
-        android:title="Chemie"/>
-    <item
-        android:id="@+id/Fach4"
-        android:title="Elektro_Techn"/>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/Fach1"
+            android:icon="@drawable/ic_mathematic"
+            android:title="Mathematic" />
+        <item
+            android:id="@+id/Fach2"
+            android:icon="@drawable/ic_physics"
+            android:title="Physics" />
+        <item
+            android:id="@+id/Fach3"
+            android:icon="@drawable/ic_chemie"
+            android:title="Chemie" />
+        <item
+            android:id="@+id/Fach4"
+            android:icon="@drawable/ic_elektro_technic"
+            android:title="Elektro_Technic" />
+    </group>
+
+    <item android:title="communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
 
 </menu>
