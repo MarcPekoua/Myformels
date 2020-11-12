@@ -2,7 +2,9 @@ package com.example.myformels
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
+import android.widget.SearchView
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -40,5 +42,14 @@ class MainActivity : AppCompatActivity() {
         if(toggle.onOptionsItemSelected(item))
             return true
          return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.search,menu)
+
+        val search=menu?.findItem(R.id.menu_search)
+        val searchView= search?.actionView as androidx.appcompat.widget.SearchView
+        searchView.queryHint = "Formeln suchen"
+        return super.onCreateOptionsMenu(menu)
     }
 }
