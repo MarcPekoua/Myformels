@@ -16,7 +16,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var adapter : ArrayAdapter<*>
+    lateinit var adapterLeer : ArrayAdapter<*>
     var listTest : MutableList<String> = mutableListOf()
+    var listLeer : MutableList<String> = mutableListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         listTest.add("Formel3")
         listTest.add("Formel4")
         adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,listTest )
+        adapterLeer = ArrayAdapter(this,android.R.layout.simple_list_item_1,listLeer )
         toggle = ActionBarDrawerToggle(this, firstView, R.string.open, R.string.close)
         firstView.addDrawerListener(toggle)
         toggle.syncState()
@@ -63,14 +66,20 @@ class MainActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
-
+            //TODO("Style must be changed")
             override fun onQueryTextChange(newText: String?): Boolean {
-                list_search_view.adapter=adapter
-                adapter.filter.filter(newText)
+                if (newText == ""){
+                    list_search_view.adapter=adapterLeer
+                }
+                else{
+                    list_search_view.adapter=adapter
+                    adapter.filter.filter(newText)
+                }
                 return true
             }
 
         })
+
         return super.onCreateOptionsMenu(menu)
     }
 }
