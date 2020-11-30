@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var adapterLeer : ArrayAdapter<*>
     var listTest : MutableList<String> = mutableListOf()
     var listLeer : MutableList<String> = mutableListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
