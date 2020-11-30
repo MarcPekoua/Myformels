@@ -8,15 +8,19 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.example.myformels.MainActivity"
+
     tools:openDrawer="start">>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
          android:layout_height="match_parent">
 
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/list_search_view"/>
+
+
 
     <!--  <include
           android:id="@+id/search_bar"
@@ -87,7 +91,9 @@
 
 
             </com.google.android.material.navigation.NavigationView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
+
 
 
     <!--     <androidx.constraintlayout.widget.ConstraintLayout
