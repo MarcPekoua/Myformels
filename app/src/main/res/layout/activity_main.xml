@@ -6,6 +6,7 @@
     android:id="@+id/firstView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:fitsSystemWindows="true"
     tools:context="com.example.myformels.MainActivity"
 
@@ -21,22 +22,12 @@
         android:id="@+id/list_search_view"/>
 
 
-
     <!--  <include
           android:id="@+id/search_bar"
           layout="@layout/search_bar"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           /> -->
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/toolbar"
-                        android:layout_width="match_parent"
-                        android:layout_height="?attr/actionBarSize"
-                        android:background="@color/colorPrimary"
-                        android:elevation="4dp"
-                        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                         <Button
                             android:id="@+id/fach1"
@@ -90,9 +81,11 @@
                 app:menu="@menu/nav_menu">
 
 
-            </com.google.android.material.navigation.NavigationView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.drawerlayout.widget.DrawerLayout>
+
+
+    </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+
 
 
 
