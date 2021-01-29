@@ -1,7 +1,11 @@
 package com.example.myformels
 
+import Database.FachDB
+import Database.Formel_Entity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
@@ -10,8 +14,11 @@ import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.ToolbarWidgetWrapper
+import androidx.room.Room
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.*
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
@@ -21,6 +28,20 @@ class MainActivity : AppCompatActivity() {
     var listLeer : MutableList<String> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        GlobalScope.launch {
+            val db: FachDB = FachDB.getDatabase(applicationContext)
+            var list:List<Formel_Entity> = db.fachDAO().getAll()
+
+            runOnUiThread{
+                list.forEach{
+                    Toast.makeText(applicationContext,it.formelText,Toast.LENGTH_LONG).show()
+                }
+                Toast.makeText(applicationContext,list.size.toString(),Toast.LENGTH_LONG).show()
+            }
+
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         listTest.add("Formel1")
@@ -55,7 +76,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.search,menu)
 
@@ -83,6 +103,17 @@ class MainActivity : AppCompatActivity() {
 
         return super.onCreateOptionsMenu(menu)
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        GlobalScope.launch{
+            val db=Room.databaseBuilder(applicationContext, FachDB::class.java, "formelListe").build()
+
+        }
+
+        super.onActivityResult(requestCode, resultCode, data)
+    }
+
+
 }
 
 
