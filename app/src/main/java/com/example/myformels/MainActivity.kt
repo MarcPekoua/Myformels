@@ -17,6 +17,7 @@ import androidx.appcompat.widget.ToolbarWidgetWrapper
 import androidx.room.Room
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.math_form_list.*
 import kotlinx.coroutines.*
 
 
@@ -41,7 +42,6 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         listTest.add("Formel1")
@@ -57,23 +57,29 @@ class MainActivity : AppCompatActivity() {
         nav_view.setNavigationItemSelectedListener {
 
           when(it.itemId){
-              R.id.Fach1 -> Toast.makeText(applicationContext,"clicked Math",Toast.LENGTH_LONG).show()
-              R.id.Fach2 -> Toast.makeText(applicationContext,"clicked Phy",Toast.LENGTH_LONG).show()
+              R.id.math -> Toast.makeText(applicationContext,"clicked Math",Toast.LENGTH_LONG).show()
+              R.id.physic -> Toast.makeText(applicationContext,"clicked Phy",Toast.LENGTH_LONG).show()
               R.id.Fach3 -> Toast.makeText(applicationContext,"clicked Chemie",Toast.LENGTH_LONG).show()
               R.id.Fach4 -> Toast.makeText(applicationContext,"clicked Elektrotechnik",Toast.LENGTH_LONG).show()
 
           }
             true
+
         }
         //TODO("implement the real pages")
+        fach1.setOnClickListener {
+            val intent = Intent(this, MathFormListActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(toggle.onOptionsItemSelected(item))
-            return true
+       if(toggle.onOptionsItemSelected(item))
+          return true
          return super.onOptionsItemSelected(item)
     }
+
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
