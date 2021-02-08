@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        GlobalScope.launch {
+        /*GlobalScope.launch {
             val db: FachDB = FachDB.getDatabase(applicationContext)
             var list:List<Formel_Entity> = db.fachDAO().getAll()
 
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext,list.size.toString(),Toast.LENGTH_LONG).show()
             }
 
-        }
+        }*/
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         listTest.add("Formel1")
@@ -110,14 +110,7 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        GlobalScope.launch{
-            val db=Room.databaseBuilder(applicationContext, FachDB::class.java, "formelListe").build()
 
-        }
-
-        super.onActivityResult(requestCode, resultCode, data)
-    }
 
 
 }

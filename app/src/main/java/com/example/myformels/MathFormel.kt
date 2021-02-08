@@ -4,7 +4,7 @@ package com.example.myformels
 import android.os.Parcel
 
 
-class MathFormel()  {
+class Formel()  {
     var name: String? = null
     var description: String? = null
 

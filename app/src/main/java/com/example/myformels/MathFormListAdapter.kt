@@ -13,7 +13,7 @@ import java.util.ArrayList
 
 class MathFormListAdapter(
     cxt: Activity,
-    private val data: ArrayList<MathFormel>,
+    private val data: ArrayList<Formel>,
     private val checkBoxState: BooleanArray
 )  : RecyclerView.Adapter<MathFormListAdapter.VH>() {
 
