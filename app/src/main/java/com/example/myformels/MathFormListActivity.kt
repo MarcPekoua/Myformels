@@ -43,34 +43,27 @@ class MathFormListActivity : AppCompatActivity() {
 
         GlobalScope.launch {
             val db: FachDB = FachDB.getDatabase(applicationContext)
-            var list:List<Formel_Entity> = db.fachDAO().getAll()
+            val list:List<Formel_Entity> = db.fachDAO().getAll()
 
             runOnUiThread{
                 list.forEach{
                     retVal.add(Formel(it.formelName,it.formelText))
-                    //Toast.makeText(applicationContext,it.formelName,Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext,retVal[0].name,Toast.LENGTH_LONG).show()
 
                 }
             }
 
         }
         /*
-            retVal.add(MathFormel("MathFormel1", "description"))
-            retVal.add(MathFormel("MathFormel2", "description"))
-            retVal.add(MathFormel("MathFormel3", "description"))
-            retVal.add(MathFormel("MathFormel4", "description"))
-            retVal.add(MathFormel("MathFormel5", "description"))
-            retVal.add(MathFormel("MathFormel3", "description"))
-            retVal.add(MathFormel("MathFormel7", "description"))
+            retVal.add(Formel("MathFormel1", "description"))
+            retVal.add(Formel("MathFormel2", "description"))
+            retVal.add(Formel("MathFormel3", "description"))
+            retVal.add(Formel("MathFormel4", "description"))
+            retVal.add(Formel("MathFormel5", "description"))
+            retVal.add(Formel("MathFormel3", "description"))
+            retVal.add(Formel("MathFormel7", "description"))
 
         */
-        do {
-
-            Thread.sleep(5000)
-        }while (retVal==null)
-
-        Toast.makeText(application,retVal[0].name,Toast.LENGTH_SHORT)
-
         return retVal
     }
 }
