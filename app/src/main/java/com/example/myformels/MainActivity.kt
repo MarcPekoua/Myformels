@@ -45,7 +45,8 @@ class MainActivity : AppCompatActivity() {
         nav_view.setNavigationItemSelectedListener {
 
           when(it.itemId){
-              R.id.math -> Toast.makeText(applicationContext,"clicked Math",Toast.LENGTH_LONG).show()
+              R.id.math -> { val intent = Intent(this, MathFormListActivity::class.java)
+                  startActivity(intent)}
               R.id.physic -> Toast.makeText(applicationContext,"clicked Phy",Toast.LENGTH_LONG).show()
               R.id.Fach3 -> Toast.makeText(applicationContext,"clicked Chemie",Toast.LENGTH_LONG).show()
               R.id.Fach4 -> Toast.makeText(applicationContext,"clicked Elektrotechnik",Toast.LENGTH_LONG).show()
