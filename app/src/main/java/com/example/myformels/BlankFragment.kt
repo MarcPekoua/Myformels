@@ -15,15 +15,6 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.util.ArrayList
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-
-
-/**
- * A simple [Fragment] subclass.
- * Use the [BlankFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BlankFragment : Fragment() {
 
     internal var data: ArrayList<Formel>? = null
@@ -34,16 +25,18 @@ class BlankFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        data = chargeLesDonnees()
+        adapter = MathFormListAdapter(this.requireActivity(), data!!, SelectedMathForm)
+        mathFormelsListRv.adapter = adapter
+        mathFormelsListRv.layoutManager = LinearLayoutManager(this.requireContext())
         return inflater.inflate(R.layout.fragment_blank, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 
-        data = chargeLesDonnees()
-        adapter = MathFormListAdapter(this.requireActivity(), data!!, SelectedMathForm)
-        mathFormelsListRv.adapter = adapter
-        mathFormelsListRv.layoutManager = LinearLayoutManager(this.requireContext())
+
         super.onViewCreated(view, savedInstanceState)
     }
     private fun chargeLesDonnees(): ArrayList<Formel> {

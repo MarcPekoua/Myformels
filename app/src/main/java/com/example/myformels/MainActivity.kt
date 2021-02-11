@@ -58,9 +58,15 @@ class MainActivity : AppCompatActivity() {
         //TODO("implement the real pages")
         fach1.setOnClickListener {
             Toast.makeText(applicationContext,"clicked 1",Toast.LENGTH_LONG).show()
-            val fm : FragmentManager=supportFragmentManager
-            val fragMath = BlankFragment()
-            fm.beginTransaction().replace(R.id.firstView,fragMath).commit()
+            try {
+                val fm : FragmentManager=supportFragmentManager
+                val fragMath = BlankFragment()
+                fm.beginTransaction().replace(R.id.firstView,fragMath).commit()
+            }catch (message:Exception){
+                Toast.makeText(applicationContext,message.toString(),Toast.LENGTH_LONG).show()
+
+            }
+
         }
     }
 
