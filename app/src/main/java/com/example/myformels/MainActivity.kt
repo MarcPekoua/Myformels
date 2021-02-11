@@ -14,6 +14,7 @@ import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.ToolbarWidgetWrapper
+import androidx.fragment.app.FragmentManager
 import androidx.room.Room
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -68,8 +69,9 @@ class MainActivity : AppCompatActivity() {
         }
         //TODO("implement the real pages")
         fach1.setOnClickListener {
-            val intent = Intent(this, MathFormListActivity::class.java)
-            startActivity(intent)
+            val fm : FragmentManager=supportFragmentManager
+            val fragMath = BlankFragment()
+            fm.beginTransaction().replace(R.id.firstView,fragMath).commit()
         }
     }
 
