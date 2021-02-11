@@ -28,8 +28,6 @@ class BlankFragment : Fragment() {
 
         data = chargeLesDonnees()
         adapter = MathFormListAdapter(this.requireActivity(), data!!, SelectedMathForm)
-        mathFormelsListRv.adapter = adapter
-        mathFormelsListRv.layoutManager = LinearLayoutManager(this.requireContext())
         return inflater.inflate(R.layout.fragment_blank, container, false)
     }
 
