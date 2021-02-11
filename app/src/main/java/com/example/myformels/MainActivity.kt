@@ -31,18 +31,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        GlobalScope.launch {
-            val db: FachDB = FachDB.getDatabase(applicationContext)
-            var list:List<Formel_Entity> = db.fachDAO().getAll()
-
-            runOnUiThread{
-                list.forEach{
-                    Toast.makeText(applicationContext,it.formelText,Toast.LENGTH_LONG).show()
-                }
-                Toast.makeText(applicationContext,list.size.toString(),Toast.LENGTH_LONG).show()
-            }
-
-        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         listTest.add("Formel1")
@@ -69,6 +57,7 @@ class MainActivity : AppCompatActivity() {
         }
         //TODO("implement the real pages")
         fach1.setOnClickListener {
+            Toast.makeText(applicationContext,"clicked 1",Toast.LENGTH_LONG).show()
             val fm : FragmentManager=supportFragmentManager
             val fragMath = BlankFragment()
             fm.beginTransaction().replace(R.id.firstView,fragMath).commit()
