@@ -15,6 +15,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 
+
 class MainActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var adapter : ArrayAdapter<*>
@@ -48,12 +49,12 @@ class MainActivity : AppCompatActivity() {
           when(it.itemId){
 
               R.id.navMathIt -> {
-                  val intent = Intent(this, MathFormListActivity::class.java)
+                  val intent = Intent(this, FachgroupListActivity::class.java)
                   intent.putExtra("Fach","mathe")
                   startActivity(intent)
               }
               R.id.navPhyIt -> {
-                  val intent = Intent(this, MathFormListActivity::class.java)
+                  val intent = Intent(this, FachgroupListActivity::class.java)
                   intent.putExtra("Fach","physik")
                   startActivity(intent)
               }
@@ -64,14 +65,13 @@ class MainActivity : AppCompatActivity() {
             true
 
         }
-
         mainMathematikBtn.setOnClickListener {
-            val intent = Intent(this, MathFormListActivity::class.java)
+            val intent = Intent(this, FachgroupListActivity::class.java)
             intent.putExtra("Fach","mathe")
             startActivity(intent)
         }
          mainPhisikBtn.setOnClickListener {
-             val intent = Intent(this, MathFormListActivity::class.java)
+             val intent = Intent(this, FachgroupListActivity::class.java)
              intent.putExtra("Fach","physik")
              startActivity(intent)
          }

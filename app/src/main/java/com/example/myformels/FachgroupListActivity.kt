@@ -2,32 +2,33 @@ package com.example.myformels
 
 import Database.FachDB
 import Database.Formel_Entity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.math_form_list.*
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fach_group_list_view.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.util.*
 
 
-class MathFormListActivity() : AppCompatActivity(), OnGroupClickListener {
+class FachgroupListActivity() : AppCompatActivity(), OnGroupClickListener {
 
     internal var data: ArrayList<FormelGroup>? = null
-    internal var adapter: MathFormListAdapter? = null
+    internal var adapter: FachgroupListViewAdapter? = null
 
     var Fach: String? =null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.math_form_list)
+        setContentView(R.layout.fach_group_list_view)
         Fach = intent.getStringExtra("Fach")
 
         data = fechData()
-        adapter = MathFormListAdapter(this, data!!,this)
+        adapter = FachgroupListViewAdapter(this, data!!,this)
         mathFormelsListRv.adapter = adapter
         mathFormelsListRv.layoutManager = LinearLayoutManager(this)
-
 
     }
 
