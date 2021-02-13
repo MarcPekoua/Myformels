@@ -2,44 +2,36 @@ package com.example.myformels
 
 import Database.FachDB
 import Database.Formel_Entity
-import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myformels.MathFormListAdapter
-import com.example.myformels.R
 import kotlinx.android.synthetic.main.math_form_list.*
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.launch
 import java.util.ArrayList
 
-class MathFormListActivity : AppCompatActivity() {
+class MathFormListActivity() : AppCompatActivity(), OnGroupClickListener {
 
-    internal var data: ArrayList<Formel>? = null
-    internal var SelectedMathForm: BooleanArray= BooleanArray(200)
+    internal var data: ArrayList<FormelGroup>? = null
     internal var adapter: MathFormListAdapter? = null
 
-
+    var Fach: String? =null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.math_form_list)
+        Fach = intent.getStringExtra("Fach")
 
-        data = chargeLesDonnees()
-        adapter = MathFormListAdapter(this, data!!, SelectedMathForm)
+        data = fechData()
+        adapter = MathFormListAdapter(this, data!!,this)
         mathFormelsListRv.adapter = adapter
         mathFormelsListRv.layoutManager = LinearLayoutManager(this)
 
     }
 
 
-    private fun chargeLesDonnees(): ArrayList<Formel> {
-        val retVal = ArrayList<Formel>()
-
+    private fun fechData(): ArrayList<FormelGroup> {
+        val retVal = ArrayList<FormelGroup>()
 
         GlobalScope.launch {
             val db: FachDB = FachDB.getDatabase(applicationContext)
@@ -47,23 +39,32 @@ class MathFormListActivity : AppCompatActivity() {
 
             runOnUiThread{
                 list.forEach{
-                    retVal.add(Formel(it.formelName,it.formelText))
-                    Toast.makeText(applicationContext,retVal[0].name,Toast.LENGTH_LONG).show()
+                    if(it.formelFach==Fach) {
+                        val formelGroup = it.formelFachGroup
+                        if (retVal.isEmpty()) {
+                            retVal.add(FormelGroup(it.formelFachGroup))
+                        } else {
+                            var _alreadyin = false
+                            retVal.forEach {
+                                if (it.name?.toLowerCase() == formelGroup.toLowerCase()) {
+                                    _alreadyin = true
+                                }
+                            }
+                            if (!_alreadyin) {
+                                retVal.add(FormelGroup(formelGroup))
+                            }
+                        }
+                    }
 
                 }
             }
 
         }
-        /*
-            retVal.add(Formel("MathFormel1", "description"))
-            retVal.add(Formel("MathFormel2", "description"))
-            retVal.add(Formel("MathFormel3", "description"))
-            retVal.add(Formel("MathFormel4", "description"))
-            retVal.add(Formel("MathFormel5", "description"))
-            retVal.add(Formel("MathFormel3", "description"))
-            retVal.add(Formel("MathFormel7", "description"))
 
-        */
         return retVal
+    }
+
+    override fun onGroupItemClicked(position: Int) {
+        Toast.makeText(this ,data!![position].name, Toast.LENGTH_SHORT).show()
     }
 }

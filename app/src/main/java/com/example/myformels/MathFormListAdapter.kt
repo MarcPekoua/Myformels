@@ -4,29 +4,26 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.math_form_list_item.view.*
 import java.util.ArrayList
 
 class MathFormListAdapter(
     cxt: Activity,
-    private val data: ArrayList<Formel>,
-    private val checkBoxState: BooleanArray
-)  : RecyclerView.Adapter<MathFormListAdapter.VH>() {
+    private val data: ArrayList<FormelGroup>,
+    private val onGroupClickListener: OnGroupClickListener
+    )  : RecyclerView.Adapter<MathFormListAdapter.VH>() {
 
 
     inner class VH(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var nameTxt: TextView
-        var descriptionTxt: TextView
 
         init {
 
             nameTxt = itemView.MathFormlistActivityItemname
-            descriptionTxt = itemView.MathFormlistActivityItemdescription
         }
     }
 
@@ -48,7 +45,10 @@ class MathFormListAdapter(
 
     override fun onBindViewHolder(vh: VH, i: Int) {
         vh.nameTxt.text = data[i].name
-        vh.descriptionTxt.text = data[i].description
-
+        vh.itemView.setOnClickListener {
+            onGroupClickListener.onGroupItemClicked(i)
         }
+
     }
+
+}
