@@ -69,6 +69,7 @@ class FachgroupListActivity() : AppCompatActivity(), OnGroupClickListener {
     }
 
     override fun onGroupItemClicked(position: Int) {
-        Toast.makeText(this ,data!![position].name, Toast.LENGTH_SHORT).show()
+
+        startActivity(Intent(this,FormelListActivity::class.java))
     }
 }

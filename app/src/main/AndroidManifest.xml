@@ -23,7 +23,7 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".FormelListActivity" android:parentActivityName=".FachgroupListActivity">
+        <activity android:name=".FormelListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

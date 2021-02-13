@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/formelListItemRl"
     android:layout_width="match_parent"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="10dp"
     android:layout_height="wrap_content"
     android:layout_margin="10dp">
 
@@ -29,4 +31,4 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+</androidx.cardview.widget.CardView>
