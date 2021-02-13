@@ -6,19 +6,19 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/math"
+            android:id="@+id/navMathIt"
             android:icon="@drawable/ic_mathematic"
             android:title="Mathematic" />
         <item
-            android:id="@+id/physic"
+            android:id="@+id/navPhyIt"
             android:icon="@drawable/ic_physics"
             android:title="Physics" />
         <item
-            android:id="@+id/Fach3"
+            android:id="@+id/navChimIt"
             android:icon="@drawable/ic_chemie"
             android:title="Chemie" />
         <item
-            android:id="@+id/Fach4"
+            android:id="@+id/navElekIt"
             android:icon="@drawable/ic_elektro_technic"
             android:title="Elektro_Technic" />
     </group>

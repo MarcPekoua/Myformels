@@ -7,7 +7,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mathFormelsListRv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#8080ff"
+        android:padding="10dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>

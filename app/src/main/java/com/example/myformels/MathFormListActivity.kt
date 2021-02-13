@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.math_form_list.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.util.ArrayList
+import java.util.*
+
 
 class MathFormListActivity() : AppCompatActivity(), OnGroupClickListener {
 
@@ -27,6 +28,7 @@ class MathFormListActivity() : AppCompatActivity(), OnGroupClickListener {
         mathFormelsListRv.adapter = adapter
         mathFormelsListRv.layoutManager = LinearLayoutManager(this)
 
+
     }
 
 
@@ -39,6 +41,7 @@ class MathFormListActivity() : AppCompatActivity(), OnGroupClickListener {
 
             runOnUiThread{
                 list.forEach{
+
                     if(it.formelFach==Fach) {
                         val formelGroup = it.formelFachGroup
                         if (retVal.isEmpty()) {
