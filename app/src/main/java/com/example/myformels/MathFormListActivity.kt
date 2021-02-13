@@ -2,21 +2,15 @@ package com.example.myformels
 
 import Database.FachDB
 import Database.Formel_Entity
-import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myformels.MathFormListAdapter
-import com.example.myformels.R
 import kotlinx.android.synthetic.main.math_form_list.*
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.launch
-import java.util.ArrayList
+import java.util.*
+
 
 class MathFormListActivity : AppCompatActivity() {
 
@@ -34,6 +28,7 @@ class MathFormListActivity : AppCompatActivity() {
         mathFormelsListRv.adapter = adapter
         mathFormelsListRv.layoutManager = LinearLayoutManager(this)
 
+
     }
 
 
@@ -47,8 +42,8 @@ class MathFormListActivity : AppCompatActivity() {
 
             runOnUiThread{
                 list.forEach{
-                    retVal.add(Formel(it.formelName,it.formelText))
-                    Toast.makeText(applicationContext,retVal[0].name,Toast.LENGTH_LONG).show()
+                    retVal.add(Formel(it.formelName, it.formelText))
+                    Toast.makeText(applicationContext, retVal[0].name, Toast.LENGTH_LONG).show()
 
                 }
             }
