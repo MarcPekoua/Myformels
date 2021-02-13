@@ -49,9 +49,17 @@ class MainActivity : AppCompatActivity() {
         nav_view.setNavigationItemSelectedListener {
 
           when(it.itemId){
-              R.id.navMathIt -> { val intent = Intent(this, MathFormListActivity::class.java)
-                  startActivity(intent)}
-              R.id.navPhyIt -> Toast.makeText(applicationContext,"clicked Phy",Toast.LENGTH_LONG).show()
+
+              R.id.navMathIt -> {
+                  val intent = Intent(this, MathFormListActivity::class.java)
+                  intent.putExtra("Fach","mathe")
+                  startActivity(intent)
+              }
+              R.id.navPhyIt -> {
+                  val intent = Intent(this, MathFormListActivity::class.java)
+                  intent.putExtra("Fach","physik")
+                  startActivity(intent)
+              }
               R.id.navChimIt -> Toast.makeText(applicationContext,"clicked Chemie",Toast.LENGTH_LONG).show()
               R.id.navElekIt -> Toast.makeText(applicationContext,"clicked Elektrotechnik",Toast.LENGTH_LONG).show()
 
@@ -61,8 +69,16 @@ class MainActivity : AppCompatActivity() {
         }
         mainMathematikBtn.setOnClickListener {
             val intent = Intent(this, MathFormListActivity::class.java)
+            intent.putExtra("Fach","mathe")
             startActivity(intent)
         }
+         mainPhisikBtn.setOnClickListener {
+             val intent = Intent(this, MathFormListActivity::class.java)
+             intent.putExtra("Fach","physik")
+             startActivity(intent)
+         }
+
+        mainPhisikBtn
     }
 
 

@@ -4,15 +4,10 @@ package com.example.myformels
 import android.os.Parcel
 
 
-class Formel()  {
+class FormelGroup()  {
     var name: String? = null
-    var description: String? = null
-
-
-    constructor(name: String, description: String)   :this(){
+    constructor(name: String)   :this(){
         this.name = name
-        this.description = description
     }
-
 
 }
