@@ -13,61 +13,65 @@
     tools:openDrawer="start">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-         android:layout_height="match_parent">
+         android:layout_height="match_parent"
+        android:background="#8080ff">
 
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/list_search_view"/>
 
 
-    <!--  <include
-          android:id="@+id/search_bar"
-          layout="@layout/search_bar"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          /> -->
 
                         <Button
-                            android:id="@+id/fach1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Fach1"
-                            app:layout_constraintBottom_toTopOf="@id/fach2"
+                            android:id="@+id/mainMathematikBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_margin="10dp"
+                            android:textSize="24sp"
+                            android:text="Mathematik"
+
+                            app:layout_constraintBottom_toTopOf="@id/mainPhisikBtn"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <Button
-                            android:id="@+id/fach2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Fach2"
-                            app:layout_constraintBottom_toTopOf="@id/fach3"
+                            android:id="@+id/mainPhisikBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_margin="10dp"
+                            android:textSize="24sp"
+                            android:text="Physik"
+                            app:layout_constraintBottom_toTopOf="@id/mainChimieBtn"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/fach1" />
+                            app:layout_constraintTop_toBottomOf="@id/mainMathematikBtn" />
 
                         <Button
-                            android:id="@+id/fach3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Fach3"
+                            android:id="@+id/mainChimieBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_margin="10dp"
+                            android:textSize="24sp"
+                            android:text="Chimie"
                             app:layout_constraintBottom_toTopOf="@id/fach4"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/fach2" />
+                            app:layout_constraintTop_toBottomOf="@id/mainPhisikBtn" />
 
                         <Button
                             android:id="@+id/fach4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Fach4"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_margin="10dp"
+                            android:textSize="24sp"
+                            android:text="Elektrotechnik"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/fach3" />
+                            app:layout_constraintTop_toBottomOf="@id/mainChimieBtn" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -85,67 +89,3 @@
 
     </com.google.android.material.navigation.NavigationView>
     </androidx.drawerlayout.widget.DrawerLayout>
-
-
-
-
-    <!--     <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/fach1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fach1"
-                app:layout_constraintBottom_toTopOf="@id/fach2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/fach2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fach2"
-                app:layout_constraintBottom_toTopOf="@id/fach3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fach1" />
-
-            <Button
-                android:id="@+id/fach3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fach3"
-                app:layout_constraintBottom_toTopOf="@id/fach4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fach2" />
-
-            <Button
-                android:id="@+id/fach4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fach4"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fach3" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            app:headerLayout="@layout/nav_header"
-            app:menu="@menu/nav_menu">
-
-
-        </com.google.android.material.navigation.NavigationView>
-
-
-    </androidx.drawerlayout.widget.DrawerLayout> -->

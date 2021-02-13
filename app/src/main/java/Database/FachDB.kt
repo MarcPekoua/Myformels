@@ -50,8 +50,11 @@ abstract class FachDB: RoomDatabase()
 
             val formel1 : Formel_Entity=Formel_Entity(0,"math","geometrie","hypothenuse","hypothenuse au carré est la somme des carrés des 2 autres cotés","c*c = a*a +b*b)")
             val formel2 : Formel_Entity=Formel_Entity(1,"math","geometrie","surface d'un triangle","base multipliée par la hauteur le tout divisé par 2","(b*h)/2)")
+            val formel3 : Formel_Entity=Formel_Entity(2,"math","Arithmetique","cos","base fgdfdggdgfdgfg par la hauteur le tout divisé par 2","(b*h)/2)")
+
             instance!!.fachDAO().addFormel(formel1)
             instance!!.fachDAO().addFormel(formel2)
+            instance!!.fachDAO().addFormel(formel3)
             return null
         }
     }

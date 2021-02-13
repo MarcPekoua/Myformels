@@ -30,6 +30,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
+
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         listTest.add("Formel1")
@@ -56,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
         }
         //TODO("implement the real pages")
-        fach1.setOnClickListener {
+        mainMathematikBtn.setOnClickListener {
             val intent = Intent(this, MathFormListActivity::class.java)
             startActivity(intent)
         }
