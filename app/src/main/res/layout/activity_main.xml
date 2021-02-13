@@ -6,75 +6,82 @@
     android:id="@+id/firstView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:fitsSystemWindows="true"
     tools:context="com.example.myformels.MainActivity"
-
     tools:openDrawer="start">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-         android:layout_height="match_parent"
-        android:background="#8080ff">
 
-
-    <ListView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/list_search_view"/>
+        android:orientation="vertical">
 
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_search_view"
+            android:padding="15dp"
+            android:contextClickable="true"
+            />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#8080ff">
 
-                        <Button
-                            android:id="@+id/mainMathematikBtn"
-                            android:layout_width="match_parent"
-                            android:layout_height="150dp"
-                            android:layout_margin="10dp"
-                            app:layout_constraintCircleRadius="10sp"
-                            android:textSize="24sp"
-                            android:text="Mathematik"
+            <Button
+                android:id="@+id/mainMathematikBtn"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                app:layout_constraintCircleRadius="10sp"
+                android:textSize="24sp"
+                android:text="Mathematik"
 
-                            app:layout_constraintBottom_toTopOf="@id/mainPhisikBtn"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toTopOf="@id/mainPhisikBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                        <Button
-                            android:id="@+id/mainPhisikBtn"
-                            android:layout_width="match_parent"
-                            android:layout_height="150dp"
-                            android:layout_margin="10dp"
-                            android:textSize="24sp"
-                            android:text="Physik"
-                            app:layout_constraintBottom_toTopOf="@id/mainChimieBtn"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/mainMathematikBtn" />
+            <Button
+                android:id="@+id/mainPhisikBtn"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:textSize="24sp"
+                android:text="Physik"
+                app:layout_constraintBottom_toTopOf="@id/mainChimieBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mainMathematikBtn" />
 
-                        <Button
-                            android:id="@+id/mainChimieBtn"
-                            android:layout_width="match_parent"
-                            android:layout_height="150dp"
-                            android:layout_margin="10dp"
-                            android:textSize="24sp"
-                            android:text="Chimie"
-                            app:layout_constraintBottom_toTopOf="@id/mainElektrotechnikBtn"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/mainPhisikBtn" />
+            <Button
+                android:id="@+id/mainChimieBtn"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:textSize="24sp"
+                android:text="Chimie"
+                app:layout_constraintBottom_toTopOf="@id/mainElektrotechnikBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mainPhisikBtn" />
 
-                        <Button
-                            android:id="@+id/mainElektrotechnikBtn"
-                            android:layout_width="match_parent"
-                            android:layout_height="150dp"
-                            android:layout_margin="10dp"
-                            android:textSize="24sp"
-                            android:text="Elektrotechnik"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/mainChimieBtn" />
+            <Button
+                android:id="@+id/mainElektrotechnikBtn"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:textSize="24sp"
+                android:text="Elektrotechnik"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mainChimieBtn" />
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
 
             <com.google.android.material.navigation.NavigationView
                 android:id="@+id/nav_view"

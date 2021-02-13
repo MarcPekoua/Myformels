@@ -5,11 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".searchBar.searchBar"
     android:orientation="vertical">
-    <Button
-        android:id="@+id/test"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="test"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

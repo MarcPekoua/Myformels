@@ -12,9 +12,6 @@ import kotlinx.android.synthetic.main.search_bar.*
 class searchBar:Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        test.setOnLongClickListener {
-            Toast.makeText(context,"clicked Math", Toast.LENGTH_LONG).show()
-            true
-        }
+
     }
 }
