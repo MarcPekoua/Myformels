@@ -6,23 +6,19 @@
     android:id="@+id/firstView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:fitsSystemWindows="true"
     tools:context="com.example.myformels.MainActivity"
-
     tools:openDrawer="start">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
          android:layout_height="match_parent"
         android:background="#8080ff">
 
-
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/list_search_view"/>
-
-
 
                         <Button
                             android:id="@+id/mainMathematikBtn"
@@ -84,9 +80,6 @@
                 android:fitsSystemWindows="true"
                 app:headerLayout="@layout/nav_header"
                 app:menu="@menu/nav_menu">
-
-
-
 
     </com.google.android.material.navigation.NavigationView>
     </androidx.drawerlayout.widget.DrawerLayout>

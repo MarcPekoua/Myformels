@@ -59,7 +59,6 @@ class MainActivity : AppCompatActivity() {
             true
 
         }
-        //TODO("implement the real pages")
         mainMathematikBtn.setOnClickListener {
             val intent = Intent(this, MathFormListActivity::class.java)
             startActivity(intent)
@@ -86,7 +85,6 @@ class MainActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
-            //TODO("Style must be changed")
             override fun onQueryTextChange(newText: String?): Boolean {
                 if (newText == ""){
                     list_search_view.adapter=adapterLeer
