@@ -14,6 +14,7 @@ import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.ToolbarWidgetWrapper
+import androidx.core.content.ContextCompat.startActivity
 import androidx.room.Room
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*

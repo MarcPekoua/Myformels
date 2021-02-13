@@ -29,6 +29,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_margin="10dp"
+                            app:layout_constraintCircleRadius="10sp"
                             android:textSize="24sp"
                             android:text="Mathematik"
 
@@ -56,13 +57,13 @@
                             android:layout_margin="10dp"
                             android:textSize="24sp"
                             android:text="Chimie"
-                            app:layout_constraintBottom_toTopOf="@id/fach4"
+                            app:layout_constraintBottom_toTopOf="@id/mainElektrotechnikBtn"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/mainPhisikBtn" />
 
                         <Button
-                            android:id="@+id/fach4"
+                            android:id="@+id/mainElektrotechnikBtn"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_margin="10dp"
