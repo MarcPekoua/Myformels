@@ -5,16 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.math_form_list_item.view.*
+import kotlinx.android.synthetic.main.fach_group_list_view_item.*
+import kotlinx.android.synthetic.main.fach_group_list_view_item.view.*
 import java.util.ArrayList
 
-class MathFormListAdapter(
+class FachgroupListViewAdapter(
     cxt: Activity,
     private val data: ArrayList<FormelGroup>,
     private val onGroupClickListener: OnGroupClickListener
-    )  : RecyclerView.Adapter<MathFormListAdapter.VH>() {
+    )  : RecyclerView.Adapter<FachgroupListViewAdapter.VH>() {
 
 
     inner class VH(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -38,7 +38,7 @@ class MathFormListAdapter(
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): VH {
-        val view = inflater.inflate(R.layout.math_form_list_item, null)
+        val view = inflater.inflate(R.layout.fach_group_list_view_item, null)
 
         return VH(view)
     }

@@ -1,25 +1,14 @@
 package com.example.myformels
 
-import Database.FachDB
-import Database.Formel_Entity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
-import android.widget.SearchView
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.widget.ToolbarWidgetWrapper
-import androidx.core.content.ContextCompat.startActivity
-import androidx.room.Room
-import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.math_form_list.*
-import kotlinx.coroutines.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -51,12 +40,12 @@ class MainActivity : AppCompatActivity() {
           when(it.itemId){
 
               R.id.navMathIt -> {
-                  val intent = Intent(this, MathFormListActivity::class.java)
+                  val intent = Intent(this, FachgroupListActivity::class.java)
                   intent.putExtra("Fach","mathe")
                   startActivity(intent)
               }
               R.id.navPhyIt -> {
-                  val intent = Intent(this, MathFormListActivity::class.java)
+                  val intent = Intent(this, FachgroupListActivity::class.java)
                   intent.putExtra("Fach","physik")
                   startActivity(intent)
               }
@@ -68,12 +57,12 @@ class MainActivity : AppCompatActivity() {
 
         }
         mainMathematikBtn.setOnClickListener {
-            val intent = Intent(this, MathFormListActivity::class.java)
+            val intent = Intent(this, FachgroupListActivity::class.java)
             intent.putExtra("Fach","mathe")
             startActivity(intent)
         }
          mainPhisikBtn.setOnClickListener {
-             val intent = Intent(this, MathFormListActivity::class.java)
+             val intent = Intent(this, FachgroupListActivity::class.java)
              intent.putExtra("Fach","physik")
              startActivity(intent)
          }
