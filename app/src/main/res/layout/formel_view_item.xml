@@ -8,7 +8,7 @@
     tools:context=".FormelActivity">
 
     <TextView
-        android:id="@+id/activity_formelTV"
+        android:id="@+id/formelTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/dreieck"
-        app:layout_constraintTop_toBottomOf="@+id/activity_formelTV"
+        app:layout_constraintTop_toBottomOf="@+id/formelTV"
         app:layout_constraintBottom_toTopOf="@+id/activity_formelTvD"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
