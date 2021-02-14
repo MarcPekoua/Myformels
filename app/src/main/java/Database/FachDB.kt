@@ -1,18 +1,12 @@
 package Database
 
 import android.content.Context
-import android.os.AsyncTask
-import android.provider.MediaStore.Images.Media.getBitmap
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.example.myformels.Converters
-import com.example.myformels.R
 
 @Database(entities = [(Formel_Entity::class)],version = 1)
-@TypeConverters(Converters::class)
 abstract class FachDB: RoomDatabase()
 {
     abstract fun fachDAO() : DAO

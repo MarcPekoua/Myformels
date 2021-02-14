@@ -2,14 +2,13 @@ package com.example.myformels.FormelListView
 
 import Database.FachDB
 import Database.Formel_Entity
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myformels.FormelActivity
+import com.example.myformels.FormelActivity.FormelActivity
 import com.example.myformels.FormelFachGroup.FormelGroup
 import com.example.myformels.R
-
 import kotlinx.android.synthetic.main.formel_list_view.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -75,9 +74,11 @@ class FormelListActivity() : AppCompatActivity(), OnListClickListener {
     }
 
 
-    override fun onGroupItemClicked(position: Int) {
+    override fun onListClickListener(position: Int) {
         startActivity<FormelActivity>()
+        val intent = Intent(this, FormelActivity::class.java)
+        intent.putExtra("Formel",data!![position].name)
+        startActivity(intent)
     }
-
 
 }
