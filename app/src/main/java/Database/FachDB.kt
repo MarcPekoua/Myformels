@@ -56,39 +56,39 @@ abstract class FachDB: RoomDatabase()
 
             //Math Arithmetik
 
-            val formel6 : Formel_Entity=Formel_Entity(5,"Mathe","Aritmetik","Punktrichtungsgleichung ","Gerade durch den Punkt mit dem Richtungsvektor :", "drawable/arithmetik/Punktrichtungsgleichung")
-            val formel7 : Formel_Entity=Formel_Entity(6,"mathe","Aritmetik","Zweipunktegleichung","Schreibweise unter Verwendung von Koordinaten (im raum bzw. in der xy-Ebene)","drawable/arithmetik/Zweipunktegleichung")
-            val formel8 : Formel_Entity=Formel_Entity(7,"mathe","Aritmetik","Lagebeziehung zweier Geraden","g und h liegen in einer Ebene genau dann, wen die Vektoren , und linear abhängig sind","drawable/arithmetik/lagebeziehungZweierGeraden")
-            val formel9 : Formel_Entity=Formel_Entity(8,"mathe","Aritmetik","Vektorprodukt","Unter dem Vektorprodukt x zweier Vektoren und versteht man einen Vektor mit folgenden Eigenschaften","drawable/arithmetik/Vektorprodukt")
-            val formel10 : Formel_Entity=Formel_Entity(9,"Mathe","Aritmetik"," Flächeninhalte", "Flächeninhalt des von den Vektoren und aufgespannten Parallelogramms ABCD:","drawable/arithmetik/Flächeninhalte")
+            val formel6 : Formel_Entity=Formel_Entity(5,"Mathe","Aritmetik","Punktrichtungsgleichung ","Gerade durch den Punkt mit dem Richtungsvektor :", " ... ")
+            val formel7 : Formel_Entity=Formel_Entity(6,"mathe","Aritmetik","Zweipunktegleichung","Schreibweise unter Verwendung von Koordinaten (im raum bzw. in der xy-Ebene)"," ... ")
+            val formel8 : Formel_Entity=Formel_Entity(7,"mathe","Aritmetik","Lagebeziehung zweier Geraden","g und h liegen in einer Ebene genau dann, wen die Vektoren , und linear abhängig sind","...")
+            val formel9 : Formel_Entity=Formel_Entity(8,"mathe","Aritmetik","Vektorprodukt","Unter dem Vektorprodukt x zweier Vektoren und versteht man einen Vektor mit folgenden Eigenschaften"," ... ")
+            val formel10 : Formel_Entity=Formel_Entity(9,"Mathe","Aritmetik"," Flächeninhalte", "Flächeninhalt des von den Vektoren und aufgespannten Parallelogramms ABCD:"," ... ")
 
             //Mathe Folgen und Reihen, Grenzwerte
-            val formel11 : Formel_Entity=Formel_Entity(10,"Mathe","Folgen und Reihen, Grenzwerte","n-te Partialsumme ","Jede nicht konvergente Zahlenfolge ist divergent.", "drawable/arithmetik/Partialsumme")
-            val formel12 : Formel_Entity=Formel_Entity(11,"mathe","Folgen und Reihen, Grenzwerte","(unendliche) Reihe","Eine Reihe ist konvergent, wenn ihre Partialsummen-folge gegen s konvergiert","drawable/folgenReihenGrenzwerte/uReihe")
-            val formel13 : Formel_Entity=Formel_Entity(12,"mathe","Folgen und Reihen, Grenzwerte","Zahlenfolge","Das Glied gibt zugleich eine Bildungsvorschrift der Folge an","drawable/folgenReihenGrenzwerte/zahlenfolge")
-            val formel14 : Formel_Entity=Formel_Entity(13,"mathe","Folgen und Reihen, Grenzwerte","Grenzwertsätze","Eine Zahl g heißt Grenzwert der Funktion f für x gegen , wenn es zu jeder vorgegebenen positiven Zahl eine Zahl > 0 gibt, sodass | f (x) - g | < für alle x mit | x - | < und .","drawable/folgenReihenGrenzwerte/grenzwertsätze")
-            val formel15 : Formel_Entity=Formel_Entity(14,"Mathe","Folgen und Reihen, Grenzwerte"," Stetigkeit", "Eine Funktion f heißt an einer Stelle stetig, wenn der Grenzwert von f an der Stelle existiert und mit dem Funtionswert f () übereinstimmt","drawable/folgenReihenGrenzwerte/stetigkeit")
+            val formel11 : Formel_Entity=Formel_Entity(10,"Mathe","Folgen und Reihen, Grenzwerte","n-te Partialsumme ","Jede nicht konvergente Zahlenfolge ist divergent.", " ... ")
+            val formel12 : Formel_Entity=Formel_Entity(11,"mathe","Folgen und Reihen, Grenzwerte","(unendliche) Reihe","Eine Reihe ist konvergent, wenn ihre Partialsummen-folge gegen s konvergiert"," ... ")
+            val formel13 : Formel_Entity=Formel_Entity(12,"mathe","Folgen und Reihen, Grenzwerte","Zahlenfolge","Das Glied gibt zugleich eine Bildungsvorschrift der Folge an"," ... ")
+            val formel14 : Formel_Entity=Formel_Entity(13,"mathe","Folgen und Reihen, Grenzwerte","Grenzwertsätze","Eine Zahl g heißt Grenzwert der Funktion f für x gegen , wenn es zu jeder vorgegebenen positiven Zahl eine Zahl > 0 gibt, sodass | f (x) - g | < für alle x mit | x - | < und ."," ... ")
+            val formel15 : Formel_Entity=Formel_Entity(14,"Mathe","Folgen und Reihen, Grenzwerte"," Stetigkeit", "Eine Funktion f heißt an einer Stelle stetig, wenn der Grenzwert von f an der Stelle existiert und mit dem Funtionswert f () übereinstimmt"," ... ")
 
             //Physik Mechanik
-            val formel16 : Formel_Entity=Formel_Entity(15,"Physik","Mechanik","Dichte ","Masse divizieren durch Volumen ist die Dichte", "drawable/mechanik/dichte")
-            val formel17 : Formel_Entity=Formel_Entity(16,"Physik","Mechanik","Druck","der Druck ist Kraft durch die Flaäche","drawable/mechanik/druck")
-            val formel18 : Formel_Entity=Formel_Entity(17,"Physik","Mechanik","Schweredruck","Um der Schweredruck zu haben, multipliieren man die Masse und die Fallbeschleunigung und divisieren durch die Fläche","drawable/mechanik/Schweredruck")
-            val formel19 : Formel_Entity=Formel_Entity(18,"Physik","Mechanik","potentielle Energie ","eines Körpers in der Nähe der Erdoberfläche.","drawable/mechanik/potentielleEnergie")
-            val formel20 : Formel_Entity=Formel_Entity(19,"Physik","Mechanik"," kinetische Energie ","Energie der Bewegung","drawable/mechanik/kinetischeEnergie ")
+            val formel16 : Formel_Entity=Formel_Entity(15,"physik","Mechanik","Dichte ","Masse divizieren durch Volumen ist die Dichte", "D = (m/V)")
+            val formel17 : Formel_Entity=Formel_Entity(16,"physik","Mechanik","Druck","der Druck ist Kraft durch die Flaäche","p = (F/A)")
+            val formel18 : Formel_Entity=Formel_Entity(17,"physik","Mechanik","Schweredruck","Um der Schweredruck zu haben, multipliieren man die Masse und die Fallbeschleunigung und divisieren durch die Fläche","p = (m*g)/A")
+            val formel19 : Formel_Entity=Formel_Entity(18,"physik","Mechanik","potentielle Energie ","eines Körpers in der Nähe der Erdoberfläche."," ... ")
+            val formel20 : Formel_Entity=Formel_Entity(19,"physik","Mechanik"," kinetische Energie ","Energie der Bewegung","drawable/mechanik/kinetischeEnergie ")
 
             //Physik Mechanik
-            val formel21 : Formel_Entity=Formel_Entity(20,"Physik","Elektrizitätslehre","elektrische Stromstärke ","Unter der Bedingung eines stationären Stromes", "drawable/elektrizitätslehre/elektrischeStromstärke")
-            val formel22 : Formel_Entity=Formel_Entity(21,"Physik","Elektrizitätslehre","ohmsches Gesetz","Unter der Bedingung = konstant","drawable/elektrizitätslehre/ohmschesGesetz")
-            val formel23 : Formel_Entity=Formel_Entity(22,"Physik","Elektrizitätslehre","coulombsches Gesetz","Unter der Bedingung, dass Punktladungen vorliegen","drawable/elektrizitätslehre/coulombschesGesetz")
-            val formel24 : Formel_Entity=Formel_Entity(23,"Physik","Elektrizitätslehre","elektrische Feldstärke ","Unter der Bedingung eines homogenen elektrischen Feldes","drawable/elektrizitätslehre/elektrischeFeldstärke ")
-            val formel25 : Formel_Entity=Formel_Entity(24,"Physik","Elektrizitätslehre"," Eigenfrequenz f eines elektrischen Schwingungkreises ","Unter der Bedingung einer freien und ungedämpften Schwingung (R = 0)","drawable/elektrizitätslehre/eigenfrequenz ")
+            val formel21 : Formel_Entity=Formel_Entity(20,"physik","Elektrizitätslehre","elektrische Stromstärke ","Unter der Bedingung eines stationären Stromes", " ... ")
+            val formel22 : Formel_Entity=Formel_Entity(21,"physik","Elektrizitätslehre","ohmsches Gesetz","Unter der Bedingung = konstant"," ... ")
+            val formel23 : Formel_Entity=Formel_Entity(22,"physik","Elektrizitätslehre","coulombsches Gesetz","Unter der Bedingung, dass Punktladungen vorliegen"," ... ")
+            val formel24 : Formel_Entity=Formel_Entity(23,"physik","Elektrizitätslehre","elektrische Feldstärke ","Unter der Bedingung eines homogenen elektrischen Feldes"," ... ")
+            val formel25 : Formel_Entity=Formel_Entity(24,"physik","Elektrizitätslehre"," Eigenfrequenz f eines elektrischen Schwingungkreises ","Unter der Bedingung einer freien und ungedämpften Schwingung (R = 0)"," ... ")
 
             //Physik Wärmelehre
-            val formel26 : Formel_Entity=Formel_Entity(25,"Physik","Wärmelehre","Schmelzwärme","spezifische Schmelzwärme und Masse multipliziert", "drawable/wärmelehre/schmelzwärme")
-            val formel27 : Formel_Entity=Formel_Entity(26,"Physik","Wärmelehre","Verdampfungswärme","spezifische Verdampfungswärme und Masse multipliziert","drawable/wärmelehre/verdampfungswärme")
-            val formel28 : Formel_Entity=Formel_Entity(27,"Physik","Wärmelehre","Verbrennungswärme","Heizwert und Masse multipliziert","drawable/wärmelehre/verbrennungswärme")
-            val formel29 : Formel_Entity=Formel_Entity(28,"Physik","Wärmelehre","Wärmestrom","Wärme durch Zeit","drawable/wärmelehre/Wärmestrom  ")
-            val formel30 : Formel_Entity=Formel_Entity(29,"Physik","Wärmelehre","Wärmequellen","abgegebene nutzbare Wärme durch die Zeit","drawable/wärmelehre/wärmequellen ")
+            val formel26 : Formel_Entity=Formel_Entity(25,"physik","Wärmelehre","Schmelzwärme","spezifische Schmelzwärme und Masse multipliziert", " ... ")
+            val formel27 : Formel_Entity=Formel_Entity(26,"physik","Wärmelehre","Verdampfungswärme","spezifische Verdampfungswärme und Masse multipliziert"," ... ")
+            val formel28 : Formel_Entity=Formel_Entity(27,"physik","Wärmelehre","Verbrennungswärme","Heizwert und Masse multipliziert"," ... ")
+            val formel29 : Formel_Entity=Formel_Entity(28,"physik","Wärmelehre","Wärmestrom","Wärme durch Zeit","drawable/wärmelehre/Wärmestrom  ")
+            val formel30 : Formel_Entity=Formel_Entity(29,"physik","Wärmelehre","Wärmequellen","abgegebene nutzbare Wärme durch die Zeit"," ...  ")
 
             //Math Geometrie
             instance!!.fachDAO().addFormel(formel1)
