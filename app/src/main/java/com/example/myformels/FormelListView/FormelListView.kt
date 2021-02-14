@@ -1,4 +1,4 @@
-package com.example.myformels
+package com.example.myformels.FormelListView
 
 
 import android.os.Parcel

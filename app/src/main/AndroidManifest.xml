@@ -18,12 +18,12 @@
 
         </activity>
 
-        <activity android:name=".FachgroupListActivity" android:parentActivityName=".MainActivity">
+        <activity android:name=".FormelFachGroup.FachgroupListActivity" android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".FormelListActivity">
+        <activity android:name=".FormelListView.FormelListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

@@ -1,34 +1,34 @@
-package com.example.myformels
+package com.example.myformels.FormelFachGroup
 
 import Database.FachDB
 import Database.Formel_Entity
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myformels.FormelListView.FormelListActivity
+import com.example.myformels.R
 import kotlinx.android.synthetic.main.fach_group_list_view.*
-import kotlinx.android.synthetic.main.formel_list_view.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.util.*
 
 
-class FormelListActivity() : AppCompatActivity(), OnGroupClickListener {
+class FachgroupListActivity() : AppCompatActivity(), OnGroupClickListener {
 
     internal var data: ArrayList<FormelGroup>? = null
-    internal var adapter: FormelListViewAdapter? = null
+    internal var adapter: FachgroupListViewAdapter? = null
 
     var Fach: String? =null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.formel_list_view)
+        setContentView(R.layout.fach_group_list_view)
         Fach = intent.getStringExtra("Fach")
 
         data = fechData()
-        adapter = FormelListViewAdapter(this, data!!,this)
-        formelsListRv.adapter = adapter
-        formelsListRv.layoutManager = LinearLayoutManager(this)
-
+        adapter = FachgroupListViewAdapter(this, data!!,this)
+        mathFormelsListRv.adapter = adapter
+        mathFormelsListRv.layoutManager = LinearLayoutManager(this)
 
     }
 
@@ -69,6 +69,9 @@ class FormelListActivity() : AppCompatActivity(), OnGroupClickListener {
     }
 
     override fun onGroupItemClicked(position: Int) {
-        Toast.makeText(this ,data!![position].name, Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, FormelListActivity::class.java)
+        intent.putExtra("FachGroup",data!![position].name)
+        startActivity(intent)
+
     }
 }

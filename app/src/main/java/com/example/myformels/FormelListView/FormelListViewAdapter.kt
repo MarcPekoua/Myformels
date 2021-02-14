@@ -1,4 +1,4 @@
-package com.example.myformels
+package com.example.myformels.FormelListView
 
 import android.app.Activity
 import android.view.LayoutInflater
@@ -6,15 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fach_group_list_view_item.*
-import kotlinx.android.synthetic.main.fach_group_list_view_item.view.*
+import com.example.myformels.FormelFachGroup.FormelGroup
+import com.example.myformels.FormelFachGroup.OnGroupClickListener
+import com.example.myformels.R
+import kotlinx.android.synthetic.main.formel_list_view_item.view.*
 import java.util.ArrayList
 
-class FachgroupListViewAdapter(
+class FormelListViewAdapter(
     cxt: Activity,
     private val data: ArrayList<FormelGroup>,
-    private val onGroupClickListener: OnGroupClickListener
-    )  : RecyclerView.Adapter<FachgroupListViewAdapter.VH>() {
+    private val onListClickListener: OnListClickListener
+)  : RecyclerView.Adapter<FormelListViewAdapter.VH>() {
 
 
     inner class VH(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -23,7 +25,7 @@ class FachgroupListViewAdapter(
 
         init {
 
-            nameTxt = itemView.MathFormlistActivityItemname
+            nameTxt = itemView.formelListname
         }
     }
 
@@ -38,7 +40,7 @@ class FachgroupListViewAdapter(
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): VH {
-        val view = inflater.inflate(R.layout.fach_group_list_view_item, null)
+        val view = inflater.inflate(R.layout.formel_list_view_item, null)
 
         return VH(view)
     }
@@ -46,7 +48,7 @@ class FachgroupListViewAdapter(
     override fun onBindViewHolder(vh: VH, i: Int) {
         vh.nameTxt.text = data[i].name
         vh.itemView.setOnClickListener {
-            onGroupClickListener.onGroupItemClicked(i)
+            onListClickListener.onGroupItemClicked(i)
         }
 
     }
