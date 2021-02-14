@@ -48,11 +48,11 @@ abstract class FachDB: RoomDatabase()
         override fun doInBackground(vararg p0: Void?): Void? {
 
             //Mathe Geometrie
-            val formel1 : Formel_Entity=Formel_Entity(0,"Mathe","geometrie","Seitenhalbierende ","Der Schwerpunkt S teilt jede Seiten-halbierende im Verhältnis", "drawable/geometrie/dreieck")
-            val formel2 : Formel_Entity=Formel_Entity(1,"mathe","geometrie","Innenwinkel","Die Summe der Innenwinkel eines Vierecks beträgt 360°","drawable/geometrie/Innenwinkel")
-            val formel3 : Formel_Entity=Formel_Entity(2,"mathe","geometrie","Kreissektor","Tangente und Berührungsradius sind zueinander senkrecht.","drawable/geometrie/Kreissektor")
-            val formel4 : Formel_Entity=Formel_Entity(3,"mathe","geometrie","Geschwindigkeit","Tangente und Berührungsradius sind zueinander senkrecht.","drawable/geometrie/Geschwindigkeit")
-            val formel5 : Formel_Entity=Formel_Entity(4,"Mathe","geometrie"," Vielecksumkreis","Umkreis un Inkreis eines regelmößigen Vielecks haben den gleichen Mittelpunkt.","drawable/geometrie/Vielecksumkreis")
+            val formel1 : Formel_Entity=Formel_Entity(0,"Mathe","geometrie","Seitenhalbierende ","Der Schwerpunkt S teilt jede Seiten-halbierende im Verhältnis", "S = (1/2)(sqr(2((a*a)+(b*b))-a*a)), wobei a, b und cc sind die seite.")
+            val formel2 : Formel_Entity=Formel_Entity(1,"mathe","geometrie","Innenwinkel","Die Summe der Innenwinkel eines Vierecks beträgt 180°","Die summe der Innenwinkel eines Dreiecks beträgt 180°")
+            val formel3 : Formel_Entity=Formel_Entity(2,"mathe","geometrie","Kreissektor","Tangente und Berührungsradius sind zueinander senkrecht.","u = (b + (2*r))")
+            val formel4 : Formel_Entity=Formel_Entity(3,"mathe","geometrie","Geschwindigkeit","Tangente und Berührungsradius sind zueinander senkrecht.","Geschwindigkeit")
+            val formel5 : Formel_Entity=Formel_Entity(4,"Mathe","geometrie"," Vielecksumkreis","Umkreis un Inkreis eines regelmößigen Vielecks haben den gleichen Mittelpunkt.","Umkreis un Inkreis eines regelmößigen Vielecks haben den gleichen Mittelpunkt.")
 
             //Math Arithmetik
 
