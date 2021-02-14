@@ -7,9 +7,11 @@ import android.os.Parcel
 class FormelListView()  {
     var name: String? = null
     var description: String? = null
-    constructor(name: String, description: String)   :this(){
+    var form: String? = null
+    constructor(name: String, description: String, form: String)   :this(){
         this.name = name
         this.description = description
+        this.form = form
     }
 
 }

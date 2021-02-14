@@ -49,8 +49,9 @@ class FormelListActivity() : AppCompatActivity(), OnListClickListener {
                     if(it.formelFachGroup==FachGroup) {
                         val formel = it.formelName
                         val text= it.formelText
+                        val form = it.formelForm
                         if (retVal.isEmpty()) {
-                            retVal.add(FormelListView(it.formelName,it.formelText))
+                            retVal.add(FormelListView(it.formelName,it.formelText,it.formelForm))
                         } else {
                             var _alreadyin = false
                             retVal.forEach {
@@ -59,7 +60,7 @@ class FormelListActivity() : AppCompatActivity(), OnListClickListener {
                                 }
                             }
                             if (!_alreadyin) {
-                                retVal.add(FormelListView(formel,text))
+                                retVal.add(FormelListView(formel,text,form))
                             }
                         }
                     }

@@ -23,11 +23,12 @@ class FormelListViewAdapter(
 
         var nameTxt: TextView
         var descriptionTxt: TextView
-
+        var form: TextView
         init {
 
             nameTxt = itemView.formelListname
             descriptionTxt = itemView.description
+            form = itemView.form
         }
     }
 
@@ -50,6 +51,7 @@ class FormelListViewAdapter(
     override fun onBindViewHolder(vh: VH, i: Int) {
         vh.nameTxt.text = data[i].name
         vh.descriptionTxt.text = data[i].description
+        vh.form.text=data[i].form
         vh.itemView.setOnClickListener {
             onListClickListener.onListClickListener(i)
         }
