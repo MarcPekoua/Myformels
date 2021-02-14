@@ -6,19 +6,17 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myformels.FormelActivity.FormelActivity
 import com.example.myformels.FormelFachGroup.FormelGroup
 import com.example.myformels.R
 import kotlinx.android.synthetic.main.formel_list_view.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import org.jetbrains.anko.startActivity
 import java.util.*
 
 
 class FormelListActivity() : AppCompatActivity(), OnListClickListener {
 
-    internal var data: ArrayList<FormelGroup>? = null
+    internal var data: ArrayList<FormelListView>? = null
     internal var adapter: FormelListViewAdapter? = null
 
     var FachGroup: String? =null
@@ -37,8 +35,8 @@ class FormelListActivity() : AppCompatActivity(), OnListClickListener {
     }
 
 
-    private fun fechData(): ArrayList<FormelGroup> {
-        val retVal = ArrayList<FormelGroup>()
+    private fun fechData(): ArrayList<FormelListView> {
+        val retVal = ArrayList<FormelListView>()
 
         GlobalScope.launch {
             val db: FachDB = FachDB.getDatabase(applicationContext)
@@ -50,8 +48,9 @@ class FormelListActivity() : AppCompatActivity(), OnListClickListener {
 
                     if(it.formelFachGroup==FachGroup) {
                         val formel = it.formelName
+                        val text= it.formelText
                         if (retVal.isEmpty()) {
-                            retVal.add(FormelGroup(it.formelName))
+                            retVal.add(FormelListView(it.formelName,it.formelText))
                         } else {
                             var _alreadyin = false
                             retVal.forEach {
@@ -60,7 +59,7 @@ class FormelListActivity() : AppCompatActivity(), OnListClickListener {
                                 }
                             }
                             if (!_alreadyin) {
-                                retVal.add(FormelGroup(formel))
+                                retVal.add(FormelListView(formel,text))
                             }
                         }
                     }
@@ -75,10 +74,7 @@ class FormelListActivity() : AppCompatActivity(), OnListClickListener {
 
 
     override fun onListClickListener(position: Int) {
-        startActivity<FormelActivity>()
-        val intent = Intent(this, FormelActivity::class.java)
-        intent.putExtra("Formel",data!![position].name)
-        startActivity(intent)
+        //todo not yet implemend
     }
 
 }

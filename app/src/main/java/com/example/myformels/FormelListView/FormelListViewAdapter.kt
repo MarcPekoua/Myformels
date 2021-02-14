@@ -14,7 +14,7 @@ import java.util.ArrayList
 
 class FormelListViewAdapter(
     cxt: Activity,
-    private val data: ArrayList<FormelGroup>,
+    private val data: ArrayList<FormelListView>,
     private val onListClickListener: OnListClickListener
 )  : RecyclerView.Adapter<FormelListViewAdapter.VH>() {
 
@@ -22,10 +22,12 @@ class FormelListViewAdapter(
     inner class VH(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var nameTxt: TextView
+        var descriptionTxt: TextView
 
         init {
 
             nameTxt = itemView.formelListname
+            descriptionTxt = itemView.description
         }
     }
 
@@ -47,6 +49,7 @@ class FormelListViewAdapter(
 
     override fun onBindViewHolder(vh: VH, i: Int) {
         vh.nameTxt.text = data[i].name
+        vh.descriptionTxt.text = data[i].description
         vh.itemView.setOnClickListener {
             onListClickListener.onListClickListener(i)
         }
