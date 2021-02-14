@@ -7,8 +7,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myformels.FormelFachGroup.FormelGroup
-import com.example.myformels.FormelFachGroup.OnGroupClickListener
 import com.example.myformels.R
+
 import kotlinx.android.synthetic.main.formel_list_view.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -32,6 +32,7 @@ class FormelListActivity() : AppCompatActivity(), OnListClickListener {
         formelsListRv.layoutManager = LinearLayoutManager(this)
 
 
+
     }
 
 
@@ -41,6 +42,7 @@ class FormelListActivity() : AppCompatActivity(), OnListClickListener {
         GlobalScope.launch {
             val db: FachDB = FachDB.getDatabase(applicationContext)
             val list:List<Formel_Entity> = db.fachDAO().getAll()
+
 
             runOnUiThread{
                 list.forEach{
@@ -69,6 +71,7 @@ class FormelListActivity() : AppCompatActivity(), OnListClickListener {
 
         return retVal
     }
+
 
     override fun onGroupItemClicked(position: Int) {
         Toast.makeText(this ,data!![position].name, Toast.LENGTH_SHORT).show()

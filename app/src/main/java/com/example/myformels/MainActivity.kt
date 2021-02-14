@@ -3,6 +3,9 @@ package com.example.myformels
 import Database.FachDB
 import Database.Formel_Entity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -26,12 +29,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+         setContentView(R.layout.activity_main)
 
         GlobalScope.launch {
             val db: FachDB = FachDB.getDatabase(applicationContext)
             val list:List<Formel_Entity> = db.fachDAO().getAll()
-
             runOnUiThread{
                 list.forEach {
                     listForm.add(it.formelName)
@@ -110,7 +112,6 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
         })
-
 
 
 

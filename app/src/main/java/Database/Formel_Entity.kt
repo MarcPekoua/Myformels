@@ -1,5 +1,6 @@
 package Database
 
+import android.graphics.Bitmap
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
@@ -22,6 +23,7 @@ data class Formel_Entity (
             val formelText: String ,
 
             val formelForm: String
+
 ):Fach(test=0){
 
 
