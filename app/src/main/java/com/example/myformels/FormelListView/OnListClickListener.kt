@@ -1,5 +1,5 @@
 package com.example.myformels.FormelListView
 
 interface OnListClickListener {
-    fun onGroupItemClicked(position:Int)
+    fun onListClickListener(position:Int)
 }

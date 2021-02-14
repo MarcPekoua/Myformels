@@ -48,7 +48,7 @@ class FormelListViewAdapter(
     override fun onBindViewHolder(vh: VH, i: Int) {
         vh.nameTxt.text = data[i].name
         vh.itemView.setOnClickListener {
-            onListClickListener.onGroupItemClicked(i)
+            onListClickListener.onListClickListener(i)
         }
 
     }
