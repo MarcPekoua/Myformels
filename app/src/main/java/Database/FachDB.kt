@@ -53,17 +53,33 @@ abstract class FachDB: RoomDatabase()
 
         override fun doInBackground(vararg p0: Void?): Void? {
 
-            val formel1 : Formel_Entity=Formel_Entity(0,"mathe","geometrie","hypothenuse","hypothenuse au carré est la somme des carrés des 2 autres cotés", "drawable/dreieck")
-            val formel2 : Formel_Entity=Formel_Entity(1,"mathe","geometrie","surface d'un triangle","base multipliée par la hauteur le tout divisé par 2","(b*h)/2)")
-            val formel3 : Formel_Entity=Formel_Entity(2,"mathe","Arithmetique","cos","base fgdfdggdgfdgfg par la hauteur le tout divisé par 2","(b*h)/2)")
-            val formel4 : Formel_Entity=Formel_Entity(3,"physik","Mechanik","Geschwindigkeit","base fgdfdggdgfdgfg par la hauteur le tout divisé par 2","(b*h)/2)")
+            //Mathe Geometrie
+            val formel1 : Formel_Entity=Formel_Entity(0,"Mathe","geometrie","Seitenhalbierende ","Der Schwerpunkt S teilt jede Seiten-halbierende im Verhältnis", "drawable/geometrie/dreieck")
+            val formel2 : Formel_Entity=Formel_Entity(1,"mathe","geometrie","Innenwinkel","Die Summe der Innenwinkel eines Vierecks beträgt 360°","drawable/geometrie/Innenwinkel")
+            val formel3 : Formel_Entity=Formel_Entity(2,"mathe","geometrie","Kreissektor","Tangente und Berührungsradius sind zueinander senkrecht.","drawable/geometrie/Kreissektor")
+            val formel4 : Formel_Entity=Formel_Entity(3,"mathe","geometrie","Geschwindigkeit","Tangente und Berührungsradius sind zueinander senkrecht.","drawable/geometrie/Geschwindigkeit")
+            val formel5 : Formel_Entity=Formel_Entity(4,"Mathe","geometrie"," Vielecksumkreis","Umkreis un Inkreis eines regelmößigen Vielecks haben den gleichen Mittelpunkt.","drawable/geometrie/Vielecksumkreis")
 
-            val formel5 : Formel_Entity=Formel_Entity(3,"physik","Mechanik","Geschwindigkeit","base fgdfdggdgfdgfg par la hauteur le tout divisé par 2","(b*h)/2)")
+            //Math Arithmetik
+
+            val formel6 : Formel_Entity=Formel_Entity(5,"Mathe","Aritmetik","Punktrichtungsgleichung ","Gerade durch den Punkt mit dem Richtungsvektor :", "drawable/arithmetik/Punktrichtungsgleichung")
+            val formel7 : Formel_Entity=Formel_Entity(6,"mathe","Aritmetik","Zweipunktegleichung","Schreibweise unter Verwendung von Koordinaten (im raum bzw. in der xy-Ebene)","drawable/arithmetik/Zweipunktegleichung")
+            val formel8 : Formel_Entity=Formel_Entity(7,"mathe","Aritmetik","Lagebeziehung zweier Geraden","g und h liegen in einer Ebene genau dann, wen die Vektoren , und linear abhängig sind","drawable/arithmetik/lagebeziehungZweierGeraden")
+            val formel9 : Formel_Entity=Formel_Entity(8,"mathe","Aritmetik","Vektorprodukt","Unter dem Vektorprodukt x zweier Vektoren und versteht man einen Vektor mit folgenden Eigenschaften","drawable/arithmetik/Vektorprodukt")
+            val formel10 : Formel_Entity=Formel_Entity(9,"Mathe","Aritmetik"," Flächeninhalte", "Flächeninhalt des von den Vektoren und aufgespannten Parallelogramms ABCD:","drawable/arithmetik/Flächeninhalte")
 
             instance!!.fachDAO().addFormel(formel1)
             instance!!.fachDAO().addFormel(formel2)
             instance!!.fachDAO().addFormel(formel3)
             instance!!.fachDAO().addFormel(formel4)
+            instance!!.fachDAO().addFormel(formel5)
+
+            //Mathe Arithmetik
+            instance!!.fachDAO().addFormel(formel6)
+            instance!!.fachDAO().addFormel(formel7)
+            instance!!.fachDAO().addFormel(formel8)
+            instance!!.fachDAO().addFormel(formel9)
+            instance!!.fachDAO().addFormel(formel10)
             return null
         }
     }

@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myformels.FormelActivity
 import com.example.myformels.FormelFachGroup.FormelGroup
 import com.example.myformels.R
 
 import kotlinx.android.synthetic.main.formel_list_view.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import org.jetbrains.anko.startActivity
 import java.util.*
 
 
@@ -74,7 +76,7 @@ class FormelListActivity() : AppCompatActivity(), OnListClickListener {
 
 
     override fun onGroupItemClicked(position: Int) {
-        Toast.makeText(this ,data!![position].name, Toast.LENGTH_SHORT).show()
+        startActivity<FormelActivity>()
     }
 
 
