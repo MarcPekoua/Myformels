@@ -3,6 +3,9 @@ package com.example.myformels
 import Database.FachDB
 import Database.Formel_Entity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -10,6 +13,9 @@ import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import coil.request.ImageRequest
+import coil.request.SuccessResult
+import com.tofirst.jalen.library.ImageLoader
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -25,12 +31,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+         setContentView(R.layout.activity_main)
 
         GlobalScope.launch {
             val db: FachDB = FachDB.getDatabase(applicationContext)
             val list:List<Formel_Entity> = db.fachDAO().getAll()
-
             runOnUiThread{
                 list.forEach {
                     listForm.add(it.formelName)
@@ -111,8 +116,15 @@ class MainActivity : AppCompatActivity() {
         })
 
 
-
-
+    /*    private suspend fun getBitmap(): Bitmap {
+            val loading: ImageLoader = ImageLoader()
+            val request: ImageRequest = ImageRequest.Builder(this)
+                .data("https://de.wikipedia.org/wiki/Dreiecksfl%C3%A4che#/media/Datei:Dreieck.svg")
+                .build()
+            val result: Drawable = (loading.execute(request) as SuccessResult).drawable
+            return (result as BitmapDrawable).bitmap
+        }
+*/
         return super.onCreateOptionsMenu(menu)
     }
 

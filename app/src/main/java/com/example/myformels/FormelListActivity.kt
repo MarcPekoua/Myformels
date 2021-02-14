@@ -2,12 +2,19 @@ package com.example.myformels
 
 import Database.FachDB
 import Database.Formel_Entity
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import coil.request.ImageRequest
+import coil.request.SuccessResult
+import com.tofirst.jalen.library.ImageLoader
 import kotlinx.android.synthetic.main.fach_group_list_view.*
 import kotlinx.android.synthetic.main.formel_list_view.*
+import kotlinx.android.synthetic.main.search_bar.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.util.*
@@ -22,12 +29,15 @@ class FormelListActivity() : AppCompatActivity(), OnGroupClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.formel_list_view)
-        Fach = intent.getStringExtra("Fach")
 
+
+
+        Fach = intent.getStringExtra("Fach")
         data = fechData()
         adapter = FormelListViewAdapter(this, data!!,this)
         formelsListRv.adapter = adapter
         formelsListRv.layoutManager = LinearLayoutManager(this)
+
 
 
     }
@@ -39,6 +49,7 @@ class FormelListActivity() : AppCompatActivity(), OnGroupClickListener {
         GlobalScope.launch {
             val db: FachDB = FachDB.getDatabase(applicationContext)
             val list:List<Formel_Entity> = db.fachDAO().getAll()
+
 
             runOnUiThread{
                 list.forEach{
@@ -67,6 +78,7 @@ class FormelListActivity() : AppCompatActivity(), OnGroupClickListener {
 
         return retVal
     }
+
 
     override fun onGroupItemClicked(position: Int) {
         Toast.makeText(this ,data!![position].name, Toast.LENGTH_SHORT).show()

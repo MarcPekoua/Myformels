@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fach_group_list_view.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import org.jetbrains.anko.startActivity
 import java.util.*
 
 
@@ -70,6 +71,7 @@ class FachgroupListActivity() : AppCompatActivity(), OnGroupClickListener {
 
     override fun onGroupItemClicked(position: Int) {
 
-        startActivity(Intent(this,FormelListActivity::class.java))
+       // startActivity(Intent(this,FormelListActivity::class.java))
+        startActivity<FormelListActivity>()
     }
 }

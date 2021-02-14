@@ -9,6 +9,8 @@ interface DAO {
     @Insert (onConflict = 3) // 3 is the value of *onConflictStrategy.ABORT
     fun addFormel(formel:Formel_Entity)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+
     @Query ( "SELECT * FROM Formel_Entity")
     fun getAll():List<Formel_Entity>
 
